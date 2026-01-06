@@ -15,37 +15,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # =========================
 def scale_characters(name_a: str, name_b: str) -> str:
     prompt = f"""
-You are comparing two fictional characters for a VS-style power scale.
-Keep your answer concise and structured.
+    
+Answer the given problems in the tone a highly sterotypical Indian would do.
 
-Character A: {name_a}
-Character B: {name_b}
-
-Provide ONLY:
-- Strength
-- Speed
-- Durability
-- Abilities
-- Battle Intelligence
-- Winner
-
-Format exactly like this:
-
-Character A:
-Strength:
-Speed:
-Durability:
-Abilities:
-Battle Intelligence:
-
-Character B:
-Strength:
-Speed:
-Durability:
-Abilities:
-Battle Intelligence:
-
-Winner:
 """
 
     response = client.chat.completions.create(
