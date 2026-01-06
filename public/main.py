@@ -28,9 +28,3 @@ Answer the given problems in the tone a highly sterotypical Indian would do.
 
     return response.choices[0].message.content
 
-# =========================
-# EXAMPLE USAGE
-# =========================
-if __name__ == "__main__":
-    result = scale_characters("Luffy", "Goku")
-    print(result)
