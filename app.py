@@ -40,20 +40,9 @@ def index():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    try:
-        user_message = request.json.get("message")
-
-        if not user_message:
-            return jsonify({"error": "No message provided"}), 400
-
-        ai_reply = talk_to_ai(user_message)
-        return jsonify({"reply": ai_reply}), 200
-
-    except Exception as e:
-        return jsonify({
-            "error": "Something went wrong",
-            "details": str(e)
-        }), 500
+    user_message = request.json.get("message")
+    ai_reply = talk_to_ai(user_message)
+    return jsonify({"reply": ai_reply})
 
 # =========================
 # RUN SERVER
