@@ -1,0 +1,21 @@
+name: Build and Run Docker Container
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t myimage .
+
+      - name: Run container
+        run: |
+          docker run -e API_KEY=${{ secrets.API_KEY }} myimage
