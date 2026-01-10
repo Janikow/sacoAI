@@ -1,1 +1,1 @@
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.OPENAI_API_KEY;
