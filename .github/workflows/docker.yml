@@ -18,4 +18,4 @@ jobs:
 
       - name: Run container
         run: |
-          docker run -e API_KEY=${{ secrets.API_KEY }} myimage
+          docker run -e API_KEY=${{ secrets.OPENAI_API_KEY }} myimage
